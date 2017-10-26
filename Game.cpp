@@ -29,7 +29,7 @@ cout<<"Congrates you got the number :D"<<endl;
 else 
 cout<<"GAME OVER"<<endl;
 
-cout<<"Do you want to Try Again???"<<endl; 
+cout<<"Do you want to Try Again <y/n>???"<<endl; 
 cin>>ch;
 }while((ch == 'y') || (ch == 'Y'));
 if ((ch == 'n')|| (ch == 'N')){
