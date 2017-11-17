@@ -1,0 +1,54 @@
+#include <iostream>
+#include<string>
+#include<cstdlib>
+using namespace std;
+struct randoms{
+char ch;
+string name;
+int Rand;
+};
+
+void playground(randoms RR);
+int main()
+{
+randoms RR;
+
+playground(RR);
+
+}
+
+
+void playground(randoms RR){
+
+ do{
+
+cout<<"Please enter your name: "<<endl;
+getline(cin, RR.name);
+
+cout<<"Dear: "<<RR.name<<" do you want a random number?"<<endl;
+cin>> RR.ch;
+
+if (( RR.ch == 'y') || (RR.ch == 'Y'))
+{
+
+//for (int i= 0; i<20; i++){
+RR.Rand = rand();
+
+cout<<"Dear: "<<RR.name<<" your number is :"<<RR.Rand<<" and good luck"<<endl;
+//}
+
+
+}
+if ((RR.ch == 'N')||(RR.ch == 'n'))
+{
+cout<<"well. thank you for testing our program and good luck :)"<<endl;
+}
+cout<<"Do you want to keep going? <y/n>"<<endl;
+cin>>RR.ch;
+}while ((RR.ch == 'y')||(RR.ch == 'Y'));
+
+if ((RR.ch == 'N')|| (RR.ch == 'n'))
+cout<<"Thank you for enjoying with us :) "<<endl;
+//exit(0);
+
+}
