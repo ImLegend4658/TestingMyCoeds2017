@@ -1,6 +1,13 @@
 #include<iostream>
 using namespace std;
-
+/*This program only like scratch paper. 
+ * anyway: the idea is to study about the pointer how to react and follow the way of connection. 
+ * Also, see what is varity between new or without new fucction. 
+ *
+ * Please note: this is pointer idea only and it much different then link list and this 
+ * IS NOT LINK LIST IDEA EVER 
+ *
+ * All copy right@2017 Aziz Aldawk and please feel free to copy or study about it :) */
 int main(){
 
 int *p1, *p2;

@@ -1,4 +1,8 @@
 #include<iostream>
+/*This program about speed ticket in Indiana state
+ * create it by Aziz Aldawk 
+ *
+ * All copy right@2017 */
 using namespace std;
 
 void input(int &speedTick, int &result, int &speed);
