@@ -1,0 +1,186 @@
+
+int getPrime(int);
+int hash_code_map(int act, string name);
+
+class node
+{
+public:
+	int account_number;
+	string name;
+	double balance;
+	node * next;
+public:
+	node(int v, string n, double b);
+};
+
+node::node(int v, string n, double b)
+{
+	this->account_number = v;
+	this->name = n;
+	this->balance = b;
+	this->next = NULL;
+}
+
+class hashtable
+{
+public:
+	node ** array;
+	int size;
+public:
+	hashtable(int n);
+	void insert(int act, string n, double b);
+	void remove(int act, string name);
+	node * search(int act, string name);
+};
+
+hashtable::hashtable(int n)
+{
+
+    size = getPrime(n);
+
+	array = new node*[size];
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = NULL;
+
+	}
+
+	// your code goes here
+	// (1) determine the array size;
+	// (2) allocate space for array
+	// (3) set each cell in the array point to NULL
+
+
+
+}
+
+void hashtable::insert(int act, string n, double b)
+{
+	// your code goes here
+	// create a node and insert it to the hashtable
+	int HashValue = hash_code_map(act, n);
+	if (array[HashValue] == NULL)
+
+	array[HashValue] = new node(act, n, b);
+	else
+	{
+	node * enter= array[HashValue];
+	while(enter->next != NULL)
+	enter= enter->next;
+
+	if(enter->account_number == act)
+	enter->name =n;
+	else
+	enter->next = new node(act, n, b);
+	}
+
+
+
+}
+
+void hashtable::remove(int act, string n)
+{
+	// your code goes here
+	// find the node and delete it.
+	// do nothing if it can not be found
+
+	int HashValue = hash_code_map(act, n);
+
+    node* enter= array[HashValue];
+    node * backw= NULL;
+
+    if ( enter == NULL || enter->account_number != act);
+    {
+     return;
+    }
+    while(enter->next !=NULL)
+    {
+    backw = enter;
+    enter= enter->next;
+    }
+
+    if (backw !=NULL)
+    {
+    backw->next = enter->next;
+    }
+    delete enter;
+
+}
+
+node * hashtable::search(int act, string name)
+{
+	// your code goes here
+	// find the node and return it (the pointer).
+	// retun NULL if it can not be found
+
+     int i = hash_code_map(act, name);
+
+	while(array[i] !=NULL && array[i]->account_number != act && array[i]->name != name)
+	{
+	i = hash_code_map(act, name)+1;
+	}
+	if(array[i] == NULL)
+	return NULL;
+	else
+	return array[i];
+
+ }
+
+
+int getPrime(int n)
+{
+	// your code goes here
+	// return the smallest prime number that is greater than n
+	// suppose n>=2
+for (int i =2; i<=n; i++)
+{
+if ((n%i) ==0)
+{
+return getPrime(n+1);
+}else
+{
+return n;
+}
+
+}
+
+return 0;
+}
+
+
+int hash_code_map(int act, string name)
+{
+	// your code goes here
+	// map(convert) account number (act) and name into an integer
+	// act + summation of the ASCII values of each character in the string
+    int hash_code = act;
+
+    for (unsigned i = 0; i< name.length(); ++i)
+
+    hash_code+= name[i];
+
+    return hash_code;
+
+}
+
+int main()
+{
+	hashtable ht(100);
+	ht.insert(2002, "Janet Smith", 100.99);
+	ht.insert(1001, "Alex Bush", 99.88);
+	ht.insert(3003, "John Rosa", 5.55);
+
+	node * n;
+	n = ht.search(1001, "Alex Bush");
+
+	if (n!=NULL) cout << "the balalnc of account 1001 is "<< n->balance << endl;
+	else cout << "could not find account 1001";
+
+	ht.remove(1001, "Alex Bush");
+
+n = ht.search(1001, "Alex Bush");
+if (n!=NULL) cout << "the balalnc of account 1001 is "<< n->balance << endl;
+else cout << "could not find account 1001" << endl;
+
+	return 1;
+}
