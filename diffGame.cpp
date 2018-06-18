@@ -4,7 +4,7 @@
  * Also, the level is easy, normal, and hard. 
  * The idea: go put number what you guessed and prompt if it's right or worng number....
  * 
- * All copyright@2017 Aziz Aldawk and there is no alow for copy without permission
+ * All copyright@2018 Aziz Aldawk and there is no alow for copy without permission
  * .*/
 using namespace std; 
 void easy();

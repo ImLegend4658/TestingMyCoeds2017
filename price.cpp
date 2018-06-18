@@ -19,7 +19,7 @@ do{ // do loop the repeat this program over over again.
 cout<<"What is price for this item??"<<endl;
 cin>>price;//ask the customer how much the items.
  
-cout<<"how much discount was?"<<endl;
+cout<<"how much discount is?"<<endl;
 cin>>discount;  // receive the discount number.
 
 DisZ = discount / 100; // the number will convert to decimal.
@@ -33,11 +33,11 @@ Finalprice= price - AftDiscount;
 // then, it will calculate orginal price substarct with (AftDiscount) that has calculated before..
 cout<<"Price was: $"<<price<<endl
 <<"The discount: $"<<discount<<endl
-<<"Price after discount: $"<<Finalprice<<endl;
+<<"The Price now after discount: $"<<Finalprice<<endl;
 
 //prompt to user the price and discount....
 
-cout<<"Do you want to continu?<y/n>"<<endl; // It asks the user if she/he need to keep going.
+cout<<"Do you want to continu? <y/n>"<<endl; // It asks the user if she/he need to keep going.
 cin>>ch;  // will recieve yes or no.
 
 }while((ch == 'y') || (ch == 'Y'));
