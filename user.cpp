@@ -1,13 +1,15 @@
+#include<fstream> 
 #include<iostream>
 #include<string>
 #include<cstdlib>
 using namespace std; 
 /*this program about ask user who wants to regist on webside like Facebook 
  * it will requiare user, pass and email. 
- *
  * all copy right@ Aziz Aldawk 2018
+
  * please note: This has been updated and bugs have been fixed.
 	        7/6/2018 7:07 pm.
+
 ++++++++++++++++ The purpose of this program ++++++++++++++++++
 ::: This example of being used to seal our information by hackers. 
     Also, we need to be more carefull when you get string emaill or 
@@ -19,7 +21,7 @@ using namespace std;
 click the link and enter user and password. 
 If i were you, i would go to netflix website not click the link. :)
 stay safe and be smarter .:::
-*/
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 class resg
 {
 	public:
@@ -79,7 +81,7 @@ get: return what user has already written.
 ============================*/
 void resg::setUsers(){
 	string names;
-	cout<<"Enter Username:"<<endl;
+	cout<<"...أدخل اسم المستخدم "<<endl;
 	getline(cin,names);
 	TheUser(names);
 }
@@ -91,7 +93,7 @@ string resg::getUsers(){
 
 void resg::setPass(){
 	string passw;
-	cout<<"Enter a new password"<<endl;
+	cout<<"...أدخل كلمة السر"<<endl;
 	getline(cin,passw); 
 	//cin>>passw;
 	Pass(passw);
@@ -106,7 +108,7 @@ void resg::setEmail(){
 
 	string email98;
 
-	cout<<"Enter new Email"<<endl;
+	cout<<"...أدخل الايميل تبعك"<<endl;
 	cin>>email98;
 	Email(email98);
 }
@@ -128,7 +130,17 @@ void resg::Display(){
 	setEmail();
 
 // Already forgot something: get is what received by user :)
-	cout<<"Username is: "<<getUsers()<<endl
-		<<"Password: ******* ::::: "<<"Show Password: "<<getPass()<<endl
-<<"Email: "<<getEmail()<<endl;
+//	cout<<"Username is: "<<getUsers()<<endl
+//		<<"Password: ******* ::::: "<<"Show Password: "<<getPass()<<endl
+//<<"Email: "<<getEmail()<<endl;
+
+///////////
+ofstream readme;
+
+readme.open("testme.txt");
+readme<<getUsers()<<endl
+	<<getPass()<<endl;
+	//<<getEmail()<<endl;
+readme.close();
+
 }
