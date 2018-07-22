@@ -10,7 +10,8 @@
 
  Program: Random numbers and challange.
  
- * All copyright@2018 Aziz Aldawk and there is no alow for copy without permission
+ * Copyright 2018, Aziz Aldawk. All rights reserved.
+
  * Completed by 45% alpha.
 ****************************************************************************
 ======>> V 0.2 New update: 7/22/2018 2:55 pm <<================
