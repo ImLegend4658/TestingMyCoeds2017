@@ -74,6 +74,10 @@ switch(chose)
   3- fixed the chose if the user wants to continue or not.....
 */
 
+/*
+* (easy mod) usually for begininer and test the game... 
+** Also, it's good for showing up to poeple and take opinions.
+*/
 void easy(){
 
 	int num, ran;
@@ -126,6 +130,11 @@ cout<<"Well! have great day :D"<<endl;
 
 }
 
+/*
+(Normal mod)
+this for challange between friends.. 
+
+*/
 void Normal(){
 
 int num, ran;
@@ -173,6 +182,12 @@ cout<<"Well have great day"<<endl;
 
 }
 
+/*
+(Hard mod)
+This for hardcod and expert player that 
+ want to challage between friends. 
+Carefull,, maybe you will break something very value :).
+*/
 void hard(){
 int num, ran; 
 char ch; 
