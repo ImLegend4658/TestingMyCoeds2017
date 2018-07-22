@@ -4,23 +4,38 @@
  * Also, the level is easy, normal, and hard. 
  * The idea: go put number what you guessed and prompt if it's right or worng number....
  * 
+ Author" Aziz Aldawk
+ 
+ Language: C++
+
+ Program: Random numbers and challange.
+ 
  * All copyright@2018 Aziz Aldawk and there is no alow for copy without permission
  * Completed by 45% alpha.
- .*/
+****************************************************************************
+======>> V 0.2 New update: 7/22/2018 2:55 pm <<================
+
+*/
 using namespace std; 
 void easy();
 void Normal();
 void hard();
-// functions that tells what level of defcualty. 
+// functions that tells what level of diffcalty. 
 int main(){
 
 int chose;
-
+cout<<"========================= ** Caution ** ==================================="<<endl
+    <<"This challenge game and please read this carefully for your heath..>>>"<<endl
+    <<":::::If you have heart disease, pressure or any other symptoms dieases such as diabetes::::<==="<<endl
+    <<"This game is not for you, please quite the game and stay healthy :). thank you"<<endl 
+    <<"======================== ** Caution ** ===================================="<<endl;
+cout<<endl; 
 cout<<"Welcome to the random game"<<endl
 	<<"This game about to guess what is right number>>>"<<endl
 	<<"++++ the number will change everytime you play+++"<<endl
 	<<"please note: This game still early access which mean"<<endl
-	<<"you will see many errors and glitchs.... Thanks"<<endl; 
+	<<"you will see many errors and glitchs.... Thanks"<<endl;
+cout<<endl;   
 cout<<":::::: Please chose the difficult level:::::::"<<endl
 	<<"Easy <1> : This level for poeple who play the first time"<<endl
 	<<"Normal <2> : This level is challange>"<<endl
@@ -116,6 +131,7 @@ void Normal(){
 int num, ran;
 char ch;
 int point=0;
+int trying=0;
 
 do{
 cout<<"Enter the number between <1 to 10>"<<endl;
@@ -132,30 +148,41 @@ if(num == ran){
 	cout<<"Great job! you got the number :D"<<endl;
 	point += 100;
 	cout<<"Your point is: "<<point<<endl;
+	trying=0;
 }
 else
 {
 	cout<<"GAME OVER and the last point you got is: "<<point<<endl;
-
-	cout<<"Do you want to try again <y/n>?"<<endl;
-	cin>>ch;
+	trying++;
+	cout<<trying<<" of 5"<<endl; 
+	//cout<<"Do you want to try again <y/n>?"<<endl;
+	//cin>>ch;
 	point = 0;
 }
-}while((num == ran)||(ch == 'y')||(ch == 'Y'));
+}while(trying<=5);
 
-if ((ch =='n')||( ch== 'N'))
+cout<<"Do you want to continue? <y/n>"<<endl; 
+cin>>ch;
+if((ch == 'y')||(ch == 'Y')){
+Normal();
+}
+else{
+ ((ch =='n')||( ch== 'N'));
 cout<<"Well have great day"<<endl;
-
 }
 
+}
 
 void hard(){
 int num, ran; 
 char ch; 
 int point =0;
+int trying=0;
+
 do{
 cout<<"Enter the number between <1 to 15>"<<endl; 
 cin>>num;
+
 if (num >15){
 cout<<"ERROR::::::::: YOU HAVE TO ENTER BETWEN <1 TO 15> ONLY::::::::: "<<endl;
 exit(0);
@@ -168,16 +195,25 @@ if( num == ran){
 	cout<<"Good job you got it :D"<<endl;
 	point +=150;
 	cout<<"your point is: "<<endl;
+	trying=0;
+	
 }
 else {
 	cout<<"GAME OVER and the last point you got is: "<<point<<endl;
-cout<<"Do you want to try again <y/n>"<<endl;
-cin>>ch;
+	trying++;
+	cout<<trying<<" of 5 attempts"<<endl;
 point =0; 
 }
-}while((ch=='y')||(ch == 'Y'));
-if (( ch=='n')|| (ch == 'N'))
+
+}while(trying<=5);
+cout<<"Do you want to continue? <y/n>"<<endl; 
+cin>>ch;
+if((ch=='y')||(ch == 'Y')){
+hard();
+}
+else{ (( ch=='n')|| (ch == 'N'));
 
 cout<<" a good day :D"<<endl;
 
+}
 }
