@@ -12,9 +12,9 @@
  
  * Copyright 2018, Aziz Aldawk. All rights reserved.
 
- * Completed by 45% alpha.
+
 ****************************************************************************
-======>> V 0.2 New update: 7/22/2018 2:55 pm <<================
+======>> V 0.3 New update: 7/23/2018 10:06 pm <<================
 
 */
 using namespace std; 
@@ -73,6 +73,8 @@ switch(chose)
 * 1- add how many attempted on the game. 
   2- fixed the bugs that make games exit automaticly. 
   3- fixed the chose if the user wants to continue or not.....
+*** I edited something a new for easy and make it simple: 
+such as keeping last point and chose 0 to 2 only.. 7/23/2018
 */
 
 /*
@@ -86,18 +88,22 @@ void easy(){
 	int bounce=0;
 	int trying = 0;
 	
-
-	
+	cout<<"============> Welcome to Easy Mode <============="<<endl
+	    <<"Please read rulse or instructions for easy mode."<<endl
+	    <<"1- You have only 20 attempts."<<endl
+            <<"2- If you lose, you will get the last point you have."<<endl
+            <<"3- Good luck and have fun :)."<<endl; 
+	cout<<endl; 	
 	do{
 	
-	cout<<"Enter the number between <1 to 3> !!!"<<endl;
+	cout<<"Enter the number between <0 to 2> !!!"<<endl;
 	cin>> num;
-	if ( num >= 4)
+	if ( num >= 3)
 	{
-cout<<"ERROR :::::::::: YOU HAVE TO ENTER BETWEEN <1 to 3> ONLY ::::::::::::::"<<endl;
+cout<<"ERROR :::::::::: YOU HAVE TO ENTER BETWEEN <0 to 2> ONLY ::::::::::::::"<<endl;
 exit(0);
 	}
-	ran = rand() %3;
+	ran = rand() %2;
 
 	cout<<"============ The right number is: "<<ran<<" :D"<<endl;
 
@@ -111,12 +117,12 @@ exit(0);
 
 	cout<<"GAME OVER and the last point you got "<<bounce<<endl;
 	trying++;
-	cout<<trying<<" of 5 attempts"<<endl; 
+	cout<<trying<<" of 20 attempts"<<endl; 
 //	cout<<"Do you want to try again <y/n> ?"<<endl;
 //	cin>>ch;
-	bounce = 0; //This is become zero when mean player lose the game and to start again will get zero...
+//	bounce = 0; //This is become zero when mean player lose the game and to start again will get zero...
 	}
-}while(trying<=5);
+}while(trying<=19);
 // if The user lose 5 times, program will ask if the user want to continue :),..
 
 cout<<"do you want to continue? <y/n>"<<endl; 
