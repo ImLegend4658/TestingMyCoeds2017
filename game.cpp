@@ -1,17 +1,17 @@
 #include<iostream>
 #include<cstdlib>
-/* This program is game guess what is right number and there is diffcualt level that you can chose
- * Also, the level is easy, normal, and hard. 
- * The idea: go put number what you guessed and prompt if it's right or worng number....
+/* This program is game guess what is the right number
+ * and there are diffcualt levels that you can chose
+ * Also, the level are easy, normal, and hard.
+ * The idea: input the number what you have guess and
+ * it will prompt if it's right or worng number....
  * 
- Author" Aziz Aldawk
- 
  Language: C++
  Program: Random numbers and challange.
  
- * Copyright 2018, Aziz Aldawk. All rights reserved.
+ * Copyright 2019, Aziz Aldawk. All rights reserved.
 ****************************************************************************
-======>> V 1.0 New update: 3/6/2019 10:06 pm <<================
+======>> V 2.0 New update: 3/6/2019 11:16 pm <<================
 */
 using namespace std; 
 void easy();
@@ -23,20 +23,20 @@ system("clear");
 int chose;
 cout<<"============== ** Caution ** ========================"<<endl
     <<"This challenge game and please read this carefully for your heath..>>>"<<endl
-    <<":::::If you have heart disease, pressure or any other symptoms dieases such as diabetes::::<==="<<endl
-    <<"This game is not for you, please quite the game and stay healthy :). thank you"<<endl 
+    <<":::::If you have heart disease, pressure or any other symptoms <==="<<endl
+    <<"This game is not for you, please quite the game and stay healthy."<<endl
     <<"============== ** Caution ** ========================"<<endl;
 cout<<endl; 
 cout<<"Welcome to the random game"<<endl
-	<<"This game about to guess what is right number>>>"<<endl
+        <<"This game about to guess what is the right number>>>"<<endl
 	<<"++++ the number will change everytime you play+++"<<endl
 	<<"please note: This game still early access which mean"<<endl
 	<<"you will see many errors and glitchs.... Thanks"<<endl;
 cout<<endl;   
 cout<<":::::: Please chose the difficult level:::::::"<<endl
-	<<"Easy <1> : This level for poeple who play the first time"<<endl
+        <<"Easy   <1> : This level for poeple who play the first time"<<endl
 	<<"Normal <2> : This level is challange>"<<endl
-	<<"Hard <3> : This game for expert poeple and have high patience :D :"<<endl; 
+        <<"Hard   <3> : This level for expert poeple and have high skills :"<<endl;
 cin>> chose;
 // prompt to user what she/he should to do. 
 switch(chose)
@@ -86,13 +86,15 @@ system("clear");
 	int trying = 0;
 	
 	cout<<"============> Welcome to Easy Mode <============="<<endl
-	    <<"Please read rulse or instructions for easy mode."<<endl
+            <<"Please read instructions for easy mode."<<endl
 	    <<"1- You have only 20 attempts."<<endl
-            <<"2- If you lose, you will get the last point you have."<<endl
+            <<"2- If you lose, you will get the last point you had."<<endl
             <<"3- Good luck and have fun :)."<<endl; 
 	cout<<endl; 	
 	do{
-	
+
+            //cout<<endl;
+            cout<<"*********************************************************"<<endl;
 	cout<<"Enter the number between <0 to 2> !!!"<<endl;
 	cin>> num;
 	if ( num >= 3)
@@ -102,19 +104,25 @@ exit(0);
 	}
 	ran = rand() %2;
 
-	cout<<"============ The right number is: "<<ran<<" :D"<<endl;
-
+        cout<<"The correct number is: "<<ran<<endl;
+        cout<<endl;
 	if (num == ran){
 		cout<<"Congrates, you got 50 Point..."<<endl;
 		bounce +=50;
 		cout<<"your point is: "<<bounce<<endl;
 		trying =0; // make it zero when get bounce and win...
 	}
+
 	else{
 
+    cout<<endl;
+    cout<<"*********************************************************"<<endl;
 	cout<<"GAME OVER and the last point you got "<<bounce<<endl;
-	trying++;
+        cout<<endl;
+        trying++;
 	cout<<trying<<" of 20 attempts"<<endl; 
+        cout<<endl;
+        cout<<"*********************************************************"<<endl;
 //	cout<<"Do you want to try again <y/n> ?"<<endl;
 //	cin>>ch;
 //	bounce = 0; //This is become zero when mean player lose the game and to start again will get zero...
@@ -189,7 +197,7 @@ cout<<"Well have great day"<<endl;
 (Hard mod)
 This for hardcod and expert player that 
  want to challage between friends. 
-Carefull,, maybe you will break something very value :).
+Carefull,, maybe you will break something very value like your laptop:).
 */
 void hard(){
 	system("clear");
