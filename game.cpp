@@ -11,15 +11,49 @@
  
  * Copyright 2019, Aziz Aldawk. All rights reserved.
 ****************************************************************************
-======>> V 2.0 New update: 3/6/2019 11:16 pm <<================
+Here about updates and what i've added so far::
+Version update:2.1
+date: 3/8/19 3:04 pm
+what's new: 
+I have add more function on main which that main
+will have only finctions instead of have a mass of codes. 
+Also, i create a new function for guess game and 
+i think i will add more games on the futures. 
+
 */
 using namespace std; 
 void easy();
 void Normal();
 void hard();
+void guess(); // function for game guess what's number. 
 // functions that tells what level of diffcalty. 
 int main(){
 system("clear");
+
+guess(); // game guess what's number.
+
+}// Later i will add more games. 
+/* 
+ *int num: receive the number from user
+ * int ran: it creates random numbers with percentage..
+ * char ch: leaves chose to user if she/he wants to keep going or give up.
+ * bounce == is score during the game that will earned every time player win. 
+ *do while : it will repeat untile the user give up and chose no.
+ * 
+*** on Easy function it's been fixed the bugs on 7/22/2018:
+* 1- add how many attempted on the game. 
+  2- fixed the bugs that make games exit automaticly. 
+  3- fixed the chose if the user wants to continue or not.....
+*** I edited something a new for easy and make it simple: 
+such as keeping last point and chose 0 to 2 only.. 7/23/2018
+*/
+
+/*
+* (easy mod) usually for begininer and test the game... 
+** Also, it's good for showing up to poeple and take opinions.
+*/
+void guess(){
+
 int chose;
 cout<<"============== ** Caution ** ========================"<<endl
     <<"This challenge game and please read this carefully for your heath..>>>"<<endl
@@ -57,27 +91,7 @@ switch(chose)
 	
 
 };
-// switch leaving option for user to chose....
 }
-/* 
- *int num: receive the number from user
- * int ran: it creates random numbers with percentage..
- * char ch: leaves chose to user if she/he wants to keep going or give up.
- * bounce == is score during the game that will earned every time player win. 
- *do while : it will repeat untile the user give up and chose no.
- * 
-*** on Easy function it's been fixed the bugs on 7/22/2018:
-* 1- add how many attempted on the game. 
-  2- fixed the bugs that make games exit automaticly. 
-  3- fixed the chose if the user wants to continue or not.....
-*** I edited something a new for easy and make it simple: 
-such as keeping last point and chose 0 to 2 only.. 7/23/2018
-*/
-
-/*
-* (easy mod) usually for begininer and test the game... 
-** Also, it's good for showing up to poeple and take opinions.
-*/
 void easy(){
 system("clear");
 	int num, ran;
