@@ -54,12 +54,13 @@ login();
 }// Later i will add more games. 
 //ask user to select the options.
 void login(){
+    cout<<endl;
     log ll;
     int cho;
     do{
-cout<<"A new account? press <1>"<<endl
-   <<"you already have account? <2>"<<endl
-  <<"Exit? <0>"<<endl;
+cout<<"Create a new account!            press <1>"<<endl
+   <<"Login if you already have account press <2>"<<endl
+  <<"Exit?                                    <0>"<<endl;
 cin>>cho;
     switch(cho){
     case 1:
@@ -71,14 +72,14 @@ cin>>cho;
         Current_Account(ll);
       break;
     default:
-        cout<<"ERROR and exitting for program"<<endl;
+        cout<<"ERROR 404, Exitting for program"<<endl;
         exit(0);
     }
 }while(cho !=0);
 }
 //Creating a new user and password.
 void NEWlog(log &ll){
-    cout<<"Please enter a new username:: "<<endl;
+    cout<<"Enter a new username:: "<<endl;
     cin>>ll.Newname;
 
     cout<<"Enter a new password: "<<endl;
@@ -87,12 +88,14 @@ void NEWlog(log &ll){
 //you have account??, then access to enter the game..
 
 void Current_Account(log &ll){
-cout<<"welcome and please enter your username and pass to start the game"<<endl;
 
-    cout<<"enter your username: "<<endl;
+cout<<"Welcome to login page!"<<endl;
+cout<<"The Game guess what's number!!"<<endl;
+
+    cout<<"Enter your username: "<<endl;
     cin>>ll.username;
 
-    cout<<"Enter your Password: "<<endl;
+    cout<<"Enter your password: "<<endl;
     cin>>ll.password;
 
     if((ll.username == ll.Newname)&& (ll.password == ll.Newpass )){
@@ -102,8 +105,14 @@ cout<<"welcome and please enter your username and pass to start the game"<<endl;
      }
     else
     {
+
+
         cout<<"password or name is wrong, please try again"<<endl;
+        cout<<endl;
+        cout<<endl;
         Current_Account(ll); //if it's wrong, try again :).
+
+
     }
 
 }
@@ -117,13 +126,13 @@ cout<<"welcome and please enter your username and pass to start the game"<<endl;
 void guess(){
 
 int chose;
-cout<<"============== ** Caution ** ========================"<<endl
-    <<"This challenge game and please read this carefully for your heath..>>>"<<endl
-    <<":::::If you have heart disease, pressure or any other symptoms <==="<<endl
-    <<"This game is not for you, please quite the game and stay healthy."<<endl
-    <<"============== ** Caution ** ========================"<<endl;
-cout<<endl; 
-cout<<"Welcome to the random game"<<endl
+//cout<<"============== ** Caution ** ========================"<<endl
+  //  <<"This challenge game and please read this carefully for your heath..>>>"<<endl
+   // <<":::::If you have heart disease, pressure or any other symptoms <==="<<endl
+   // <<"This game is not for you, please quite the game and stay healthy."<<endl
+   // <<"============== ** Caution ** ========================"<<endl;
+//cout<<endl;
+cout<<"Welcome to the game geuss what's right numbers."<<endl
         <<"This game about to guess what is the right number>>>"<<endl
 	<<"++++ the number will change everytime you play+++"<<endl
 	<<"please note: This game still early access which mean"<<endl
