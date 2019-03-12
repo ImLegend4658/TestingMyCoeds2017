@@ -20,8 +20,28 @@ will have only finctions instead of have a mass of codes.
 Also, i create a new function for guess game and 
 i think i will add more games on the futures. 
 
+Version update:3.5
+date: 3/11/19 10:04 pm
+what's new:
+I have added login functions:
+what's do is
+you can create a new account
+and login withn your current account.
+if your account correct, you will access to the game,
+otherwise, you have to try again.
 */
 using namespace std; 
+
+struct log{
+    string username;
+    int password;
+    string Newname;
+    int Newpass;
+};
+void login(); //function is so spread
+void NEWlog(log &ll);
+void Current_Account(log &ll);
+
 void easy();
 void Normal();
 void hard();
@@ -29,24 +49,66 @@ void guess(); // function for game guess what's number.
 // functions that tells what level of diffcalty. 
 int main(){
 system("clear");
-
-guess(); // game guess what's number.
+login();
 
 }// Later i will add more games. 
-/* 
- *int num: receive the number from user
- * int ran: it creates random numbers with percentage..
- * char ch: leaves chose to user if she/he wants to keep going or give up.
- * bounce == is score during the game that will earned every time player win. 
- *do while : it will repeat untile the user give up and chose no.
- * 
-*** on Easy function it's been fixed the bugs on 7/22/2018:
-* 1- add how many attempted on the game. 
-  2- fixed the bugs that make games exit automaticly. 
-  3- fixed the chose if the user wants to continue or not.....
-*** I edited something a new for easy and make it simple: 
-such as keeping last point and chose 0 to 2 only.. 7/23/2018
-*/
+//ask user to select the options.
+void login(){
+    log ll;
+    int cho;
+    do{
+cout<<"A new account? press <1>"<<endl
+   <<"you already have account? <2>"<<endl
+  <<"Exit? <0>"<<endl;
+cin>>cho;
+    switch(cho){
+    case 1:
+        system("clear");
+        NEWlog(ll);
+     break;
+     case 2:
+        system("clear");
+        Current_Account(ll);
+      break;
+    default:
+        cout<<"ERROR and exitting for program"<<endl;
+        exit(0);
+    }
+}while(cho !=0);
+}
+//Creating a new user and password.
+void NEWlog(log &ll){
+    cout<<"Please enter a new username:: "<<endl;
+    cin>>ll.Newname;
+
+    cout<<"Enter a new password: "<<endl;
+     cin>>ll.Newpass;
+}
+//you have account??, then access to enter the game..
+
+void Current_Account(log &ll){
+cout<<"welcome and please enter your username and pass to start the game"<<endl;
+
+    cout<<"enter your username: "<<endl;
+    cin>>ll.username;
+
+    cout<<"Enter your Password: "<<endl;
+    cin>>ll.password;
+
+    if((ll.username == ll.Newname)&& (ll.password == ll.Newpass )){
+        system("clear");
+
+        guess(); // if the pass and user are correct then it will access to it.
+     }
+    else
+    {
+        cout<<"password or name is wrong, please try again"<<endl;
+        Current_Account(ll); //if it's wrong, try again :).
+    }
+
+}
+
+
 
 /*
 * (easy mod) usually for begininer and test the game... 
