@@ -1,22 +1,21 @@
 #include<iostream>
+#include <unistd.h>
+#include<string>
 using namespace std; 
-/*
- * same the idea of getline(cin, Virable)
- * or 
- * cin.get(VARIBLE, SIZE)
- *
- * all of them gives more line and space include blanks and space*/
 int main(){
 
-char sy; 
+//double b = INT_FAST32_MAX;
 
-cout<<"please write the note:::>"<<endl; 
-// This loop will read any line of input and echo it exactly, including blanks. 
-do 
+for (int i=0;i<100;i++)
 {
+    cout<<"Loading..."<<i<<"%"<<endl;
+    usleep(300000);
+    if (i == 99){
+         usleep(5000000);
+        cout<<"Error, Disconnected...."<<endl;
+    exit(0);
+     }
+}
 
-	cin.get(sy);
-	cout<<sy;
 
-}while(sy != '\n');
 }

@@ -6,13 +6,13 @@ int main(){
 
 //double b = INT_FAST32_MAX;
 
-for (int i=0;i<100;i++)
+for (int i=1;i<29;i++)
 {
-    cout<<"Loading..."<<i<<"%"<<endl;
+    cout<<"Ramadan "<<i<<endl;
     usleep(300000);
-    if (i == 99){
+    if (i == 29){
          usleep(5000000);
-        cout<<"Error, Disconnected...."<<endl;
+        cout<<"🎆🎇🎉🎊🎁Eid Mubarak 🎁🎊🎉🎇🎆"<<endl;
     exit(0);
      }
 }
