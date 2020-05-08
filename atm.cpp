@@ -27,7 +27,7 @@ This function give you choice what you want to do
 like withdraw, deposit, or else.
 */
 void choice(ATM &atms){
-
+system("clear"); //for linux
     int num;
     cout<<"Welcome to ATM Bank R"<<endl
         <<"Please choice the options"<<endl
@@ -67,6 +67,8 @@ void withdraw(ATM &atms){
     int money;
     int num;
     char ch;
+    system("clear"); //for linux
+
     cout<<"Choice the withdraw you want"<<endl
         <<"$50 <1>"<<" $100 <2>"<<endl
         <<"$200 <3>"<<"$300 <4>"<<endl
@@ -234,6 +236,8 @@ void Diposit(ATM &atms){
 
 int num , dipos;
 char ch;
+system("clear"); //for linux
+
     cout<<"diposit <1>"<<endl
         <<"Exit?   <0>"<<endl;
     cin>>num;
@@ -262,6 +266,7 @@ char ch;
 
 
 void Display(ATM &atms){
+system("clear"); //for linux
 
 char ch;
 cout<<"Your balance now is: "<<atms.wallet<<endl; 
@@ -278,6 +283,8 @@ if((ch == 'M') || (ch == 'm')){
 }
 
 void Saving(ATM &atms){
+    system("clear"); //for linux
+
 int mo;
 char ch;
 cout<<"Welcome to saving account"<<endl
@@ -285,15 +292,19 @@ cout<<"Welcome to saving account"<<endl
     <<"in order to save your money for future :)"<<endl
     <<"how many you want to transfer?"<<endl; 
     cin>>mo;
+    if(atms.wallet > 0){
     atms.wallet -=mo;
     atms.saving +=mo;
 
     cout<<"In your wallet is: "<<atms.wallet <<endl; 
     cout<<"In your saving is: "<<atms.saving<<endl; 
-
+    }else if(atms.wallet < 0) 
+    cout<<endl;
+    cout<<"There is no enough money in your wallet"<<endl; 
+     
     cout<<"Do you want something else? (back to menu) <y/n>"<<endl; 
     cin>>ch; 
-
+ 
     if((ch =='Y')||(ch == 'y')){
         choice(atms);
     }else if((ch =='N')||(ch == 'n')){
