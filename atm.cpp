@@ -5,23 +5,27 @@ This is program about ATM machin, if the user wants to
 dipast the money or withdraw or saving it.
 */
 struct ATM{
-    int wallet =1000;
+    int wallet =0;
     int saving =0;
 };
+//saving value in memory locaion
 void choice(ATM &atms);
 void withdraw(ATM &atms);
 void Diposit(ATM &atms);
 void Display(ATM &atms);
 void Saving(ATM &atms);
-
+//delclare functions.
 int main(){
 ATM atms;
 
 choice(atms);
-
-
+//takes you to menu.
 }
 
+/*
+This function give you choice what you want to do 
+like withdraw, deposit, or else.
+*/
 void choice(ATM &atms){
 
     int num;
@@ -48,71 +52,179 @@ void choice(ATM &atms){
         break;
          case 0:
          exit(0);
+
+         default:
+         cout<<"error input, exiting now"<<endl; 
+         exit(0);
      };
 }
-
+/*
+withdraw is taking a cash with you 
+and there is many option of cash 
+or you can select number of cash you want.
+*/
 void withdraw(ATM &atms){
     int money;
     int num;
+    char ch;
     cout<<"Choice the withdraw you want"<<endl
         <<"$50 <1>"<<" $100 <2>"<<endl
         <<"$200 <3>"<<"$300 <4>"<<endl
-        <<"Other? <5>"<<endl;
+        <<"Other? <5>"<<endl
+        <<"return to menu? <6>"<<endl;
     cin>>num;
 
     switch (num)
     {
     case 1:
     atms.wallet -=50;
+    //take out from your wallet to give you a cash.
     if(atms.wallet > 0){
-        cout<<atms.wallet<<endl;
+        cout<<"you withdraw: 50"<<endl;
+        cout<<"your balance now: "<<atms.wallet<<endl;
+        cout<<"Do you want somthing else? (back to menu) <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }else if(atms.wallet < 0)
     {
-        cout<<"you dont have enough moeny."<<endl;
-        //to menue?
+        cout<<"There's no enough money in your wallet!!"<<endl;
+        cout<<"Do you want return to menu? <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }
         break;
     case 2:
     atms.wallet -=100;
     if(atms.wallet > 0){
-        cout<<atms.wallet<<endl;
+       cout<<"you withdraw: 100"<<endl;
+        cout<<"your balance now: "<<atms.wallet<<endl;
+        cout<<"Do you want somthing else? (back to menu)<y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }else if(atms.wallet < 0)
     {
-        cout<<"you dont have enough moeny."<<endl;
+         cout<<"There's no enough money in your wallet!!"<<endl;
+        cout<<"Do you want return to menu? <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }
     break;
     case 3:
     atms.wallet -=200;
     if(atms.wallet > 0){
-        cout<<atms.wallet<<endl;
+          cout<<"you withdraw: 200"<<endl;
+        cout<<"your balance now: "<<atms.wallet<<endl;
+        cout<<"Do you want somthing else? (back to menu) <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }else if(atms.wallet < 0)
     {
-        cout<<"you dont have enough moeny."<<endl;
-    }
+        cout<<"There's no enough money in your wallet!!"<<endl;
+        cout<<"Do you want return to menu? <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
+            }
     break;
     case 4: 
     atms.wallet -=300;
     if(atms.wallet > 0){
-        cout<<atms.wallet<<endl;
+         cout<<"you withdraw: 300"<<endl;
+        cout<<"your balance now: "<<atms.wallet<<endl;
+        cout<<"Do you want somthing else? (back to menu) <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }else if(atms.wallet < 0)
     {
-        cout<<"you dont have enough moeny."<<endl;
-    }
+ cout<<"There's no enough money in your wallet!!"<<endl;
+        cout<<"Do you want return to menu? <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        } 
+           }
     break;
     case 5:
     cout<<"Enter amount you want to withdraw"<<endl;
     cin>>money;
     atms.wallet -=money;
     if(atms.wallet > 0){
-        cout<<atms.wallet<<endl;
+         cout<<"you withdraw: "<<money<<endl;
+        cout<<"your balance now: "<<atms.wallet<<endl;
+        cout<<"Do you want somthing else? (back to menu) <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
+
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        }
     }else if(atms.wallet < 0)
     {
-        cout<<"you dont have enough moeny."<<endl;
-    }
-    break;
+cout<<"There's no enough money in your wallet!!"<<endl;
+        cout<<"Do you want return to menu? (back to menu) <y/n>"<<endl; 
+        cin>>ch;
+        if((ch == 'Y') || (ch == 'y')){
 
+            choice(atms);
+        }else if((ch == 'N') || (ch == 'n')){
+            cout<<"Thank you for using ATM"<<endl;
+            exit(0);
+        } 
+            }
+    break;
+    case 6:
+    choice(atms);
+    break;
     default:
-        break; //exit
+        cout<<"Error input"<<endl; 
+        exit(0);
     }
 
 }
@@ -138,12 +250,13 @@ char ch;
     if((ch == 'Y') || (ch == 'y')){
         Diposit(atms);
     }else if((ch == 'N') || (ch == 'n')){
-        //back to menu;
+        choice(atms);
     }
         break;
     
     default:
-        break;
+       cout<<"Error input"<<endl; 
+       exit(0);
     }
 }
 
@@ -158,14 +271,15 @@ cout<<"if you dont want anything else choic M to back to menu"<<endl
     <<"if you want to saving option choice S"<<endl;
     cin>>ch;
 if((ch == 'M') || (ch == 'm')){
-        //back to menu
+        choice(atms);
     }else if((ch == 'S') || (ch == 's')){
-        //back to Saving;
+       Saving(atms);
     }
 }
 
 void Saving(ATM &atms){
 int mo;
+char ch;
 cout<<"Welcome to saving account"<<endl
     <<"you can transfer your money to saving"<<endl
     <<"in order to save your money for future :)"<<endl
@@ -174,6 +288,16 @@ cout<<"Welcome to saving account"<<endl
     atms.wallet -=mo;
     atms.saving +=mo;
 
-    cout<<atms.wallet <<endl; 
-    cout<<atms.saving<<endl; 
+    cout<<"In your wallet is: "<<atms.wallet <<endl; 
+    cout<<"In your saving is: "<<atms.saving<<endl; 
+
+    cout<<"Do you want something else? (back to menu) <y/n>"<<endl; 
+    cin>>ch; 
+
+    if((ch =='Y')||(ch == 'y')){
+        choice(atms);
+    }else if((ch =='N')||(ch == 'n')){
+        cout<<"Thank you for using ATM"<<endl; 
+        exit(0);
+    }
 }
