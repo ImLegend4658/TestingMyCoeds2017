@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std; 
 /*
-This is program about ATM machin, if the user wants to 
-dipast the money or withdraw or saving it.
+This is program about ATM, if the user wants to 
+diposit the money or withdraw or saving it.
 */
 struct ATM{
     int wallet =0;
@@ -298,10 +298,10 @@ cout<<"Welcome to saving account"<<endl
 
     cout<<"In your wallet is: "<<atms.wallet <<endl; 
     cout<<"In your saving is: "<<atms.saving<<endl; 
-    }else if(atms.wallet < 0) 
+    }else if(atms.wallet < 0){
     cout<<endl;
     cout<<"There is no enough money in your wallet"<<endl; 
-     
+    }
     cout<<"Do you want something else? (back to menu) <y/n>"<<endl; 
     cin>>ch; 
  
