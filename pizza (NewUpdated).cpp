@@ -5,6 +5,7 @@ using namespace std;
 Author: Aziz Aldawk.
 Date: 4/3/2017
 UPDATED: 1/5/2019 
+Updated: 5/1/2020
 What NEW: more orgniazed, looks neat and beautiful. 
 user can undersand and interact with pizza app :)
 Homework #4
@@ -52,6 +53,7 @@ cin>>yes;
 
 	}while(yes == 'y');
 if( yes == 'n'){
+
 cout<<"Thank you for visiting US and pizza will be ready shortly. :)"<<endl;
 exit(0); 
 };//update 2018: this function make sure if it needs keep going or stop. :)
@@ -129,32 +131,34 @@ Get The pizza: This function wil be able to prompt
 ==============================================================*/
 void Pizza::Set_computePrice()
 {
-	//declare string or characters. 
-	char s1[20] = "Deep Dish";
-	char s2[20] = "Hand Tossed";
-	char s3[5] = "Pan";
-	
-	switch (GetTheTypeOfPizza())
-	{
-	case 1:
-		s1; //Deep Dish.
-		break;
-	case 2:
-		s2; // Hand Tossed.
-		break;
-	case 3:
-		s3; // Pen
-		break;
-	default:
-		cout << "error" << endl;
-		exit(0); // program will exit. 
-	}
+    
+	// //declare string or characters. 
+	// char s1[20] = "Deep Dish";
+	// char s2[20] = "Hand Tossed";
+	// char s3[5] = "Pan";
+	system("clear");
+	// switch (GetTheTypeOfPizza())
+	// {
+	// case 1:
+ 	// 	// s1; //Deep Dish.
+    //      cout<<"Deep Dish"<<endl;
+	// 	break;
+	// case 2:
+	// 	// s2; // Hand Tossed.
+	// 	break;
+	// case 3:
+	// 	// s3; // Pen
+	// 	break;
+	// default:
+	// 	cout << "error" << endl;
+	// 	exit(0); // program will exit. 
+	// }
 
 	//declare varibles 
 	int Topping;
 	int num = 1;
     int topping; 
-	system("clear");
+	// system("clear");
 	//ask user how many topping, they want on the pizza.
 	cout << "How many Topping do you want on the Pizza?" << endl
 	     << "*** Please note: $2 per Topping ***" << endl;
@@ -163,22 +167,46 @@ void Pizza::Set_computePrice()
 
 	topping = num + Topping;
 	// it will add number the user has enterd with price of topping. 
-
+cout<<"your order: "<<endl;
+switch (GetTheTypeOfPizza())
+	{
+	case 1:
+ 		// s1; //Deep Dish.
+         cout<<"Deep Dish pizza"<<endl;
+		break;
+	case 2:
+        cout<<"Hand Tossed pizza"<<endl;
+		// s2; // Hand Tossed.
+		break;
+	case 3:
+        cout<<"Pen pizza"<<endl;
+		// s3; // Pen
+		break;
+	default:
+		cout << "error" << endl;
+		exit(0); // program will exit. 
+	}
+    //prompt to user the output of pizza type.
+    //that he/she choic it. 
 	switch(GetThePizza()){
 
 	case 1:
+    cout<<"Size small is $10 with Topping"<<endl;
 			price = 10 + topping;
 		break;
 		case 2:
+            cout<<"Size Medium is $14 with Topping"<<endl;
+
 			price = 14 + topping;
 		break;
-		case 3: 
+		case 3:
+        cout<<"Size Larg is $17 with Topping"<<endl;
 			price = 17 + topping;
 		break;
 		
 		default:
 		cout<<"error"<<endl; 
 		exit(0); // will exit the program. 
-			}
-	}
+    }// it calc with tapping and size too.
 
+	}
