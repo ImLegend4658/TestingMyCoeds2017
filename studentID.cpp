@@ -3,7 +3,10 @@
 #include <cstdlib>
 
 using namespace std; 
-
+/*
+it will generate id's for each student. 
+note: only accept string and space is count.
+*/
 struct student{
     string name; 
     int ID; 
