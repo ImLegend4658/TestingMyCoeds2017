@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std; 
+ 
+
+int main (){
+
+  ofstream readME;
+    string filename, lines;
+    // cout<<"Please write whatever you want and click Enter: "<<endl; 
+    //  getline(cin,lines);
+readME.open("insert.txt");
+    for(int i = 1;i<4;i++){
+      lines = "Insert into customer values("+ std::to_string(i) +",'Aziz','AA',4323);";
+        readME<<lines<<endl; 
+    }
+     
+    readME.close();
+}
+
+ 
