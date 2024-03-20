@@ -1,0 +1,29 @@
+#include<iostream>
+#include <unistd.h>
+#include<string>
+using namespace std; 
+int main(){
+
+//double b = INT_FAST32_MAX;
+system("clear");
+
+for (int i=1;i<=100;i++)
+{
+    cout<<"Loading! "<<i<<"%"<<endl;
+    
+    usleep(200000);
+    if (i == 100){
+        for(int k=0;k<1;k++){
+        
+         usleep(300000);
+              cout<<"😎🌙تم تعبئة الكرشة بنجاح "<<endl;
+
+        }
+//     cout<<"🎆🎇🎉🎊🎁Eid Mubarak 🎁🎊🎉🎇🎆"<<endl;
+    exit(0);
+     }
+     system("clear");
+}
+
+
+}
